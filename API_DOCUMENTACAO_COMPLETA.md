@@ -156,7 +156,9 @@ A API retorna as seguintes estatísticas:
 - `km` - Distância em quilômetros
 - `preco` - Preço do frete
 - `tipo_de_frete` - Tipo do frete
-
+- `produto` - Produto transportado
+- `veiculo` - Veiculo
+- `especie` - Carroceria
 ---
 
 ## 💻 Exemplos de Código
