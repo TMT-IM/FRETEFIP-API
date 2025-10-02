@@ -141,7 +141,7 @@ def main():
     print("="*70)
     
     API_URL = "https://fretefip.up.railway.app/api/external/metrics"
-    TOKEN = "035a907146952334e67d3414ae11bce69cb29132cbdce59102bdea63f14f4fcb"  # Substitua pelo seu token válido
+    TOKEN = "SEU_TOKEN_AQUI"  # Substitua pelo seu token válido
     
     client = FreteAPIClient(API_URL, TOKEN)
     
