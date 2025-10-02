@@ -229,7 +229,7 @@ response = requests.get(
 
 - **Requisições por dia:** 1000 (padrão)
 - **Timeout:** 30 segundos
-- **Registros processados:** até 50.000
+- **Registros processados:** até 10.000
 
 ---
 
