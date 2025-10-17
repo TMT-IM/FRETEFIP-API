@@ -122,7 +122,7 @@ Authorization: Bearer SEU_TOKEN
 | `produtos` | array | Não | Lista de produtos | `["SOJA", "MILHO"]` |
 | `veiculos` | array | Não | Lista de veículos | `["CARRETA", "TRUCK"]` |
 | `carrocerias` | array | Não | Lista de carrocerias | `["SIDER", "GRANELEIRO"]` |
-| `periodo_dias` | integer | Não | Período em dias (padrão: 120) | `90` |
+| `periodo_dias` | integer | Não | Período em dias (padrão: 90) | `90` |
 
 ### ⚠️ Valores Válidos para `tipo_frete`
 
@@ -239,7 +239,7 @@ filtros = {
     "tipo_frete": "R$/UND",
     "produtos": ["SOJA", "MILHO"],
     "uf_origem": "MT",
-    "periodo_dias": 120
+    "periodo_dias": 90
 }
 
 response = requests.post(API_URL, json=filtros, headers=headers)
@@ -536,7 +536,7 @@ O uso de requisições é rastreado automaticamente. Entre em contato com o supo
 **Soluções:**
 - Verifique se o `tipo_frete` está correto
 - Remova alguns filtros para ampliar a busca
-- Aumente o `periodo_dias` (ex: 120 ou 180 dias)
+- Aumente o `periodo_dias` (ex: 60 ou 90 dias)
 
 ### 4. Como passar arrays no GET?
 
