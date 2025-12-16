@@ -69,6 +69,8 @@ if response.status_code == 200:
 |-------|------|---------|
 | `origem` | texto | `"CAMPINAS"` |
 | `destino` | texto | `"SÃO PAULO"` |
+| `cod_ibge_origem` | texto | `"3509502"` |
+| `cod_ibge_destino` | texto | `"3550308"` |
 | `uf_origem` | sigla UF | `"SP"` |
 | `uf_destino` | sigla UF | `"RJ"` |
 | `meso_origem` | texto | `"CAMPINAS"` |
@@ -77,6 +79,21 @@ if response.status_code == 200:
 | `veiculos` | lista | `["CARRETA", "TRUCK"]` |
 | `carrocerias` | lista | `["SIDER", "GRANELEIRO"]` |
 | `periodo_dias` | número | `90` (padrão: 120) |
+
+### 🆕 Busca por Código IBGE
+
+Você pode usar o **código IBGE** da cidade ao invés do nome:
+
+```python
+filtros = {
+    "tipo_frete": "R$/UND",
+    "cod_ibge_origem": "5107909",   # SINOP - MT
+    "cod_ibge_destino": "1503606",  # ITAITUBA - PA
+    "produtos": ["SOJA"]
+}
+```
+
+> 💡 **Dica:** O código IBGE é útil quando você já tem os códigos no seu sistema e quer evitar erros de digitação nos nomes das cidades.
 
 ---
 
@@ -110,7 +127,18 @@ filtros = {
 }
 ```
 
-### Exemplo 4: Usando GET (alternativa)
+### Exemplo 4: Usando Código IBGE
+```python
+filtros = {
+    "tipo_frete": "R$/UND",
+    "cod_ibge_origem": "5107909",   # SINOP - MT
+    "cod_ibge_destino": "1503606",  # ITAITUBA - PA
+    "produtos": ["SOJA"],
+    "periodo_dias": 60
+}
+```
+
+### Exemplo 5: Usando GET (alternativa)
 ```bash
 curl "https://fretefip.up.railway.app/api/external/metrics?tipo_frete=R$/VIAGEM&origem=CAMPINAS&destino=SÃO%20PAULO" \
   -H "Authorization: Bearer SEU_TOKEN"
@@ -261,8 +289,8 @@ response = requests.get(
 
 ---
 
-**Versão:** 1.0.0  
-**Última atualização:** 30/09/2025
+**Versão:** 1.1.0
+**Última atualização:** 16/12/2025
 
 ---
 
